@@ -48,7 +48,7 @@ def get_basic_auth(host):
     if username is None or secret is None:
         return
     basic_auth = ('%s:%s' % (username, secret)).encode('utf-8')
-    basic_auth = base64.encodestring(basic_auth)
+    basic_auth = base64.encodebytes(basic_auth)
     return basic_auth.decode('ascii').replace('\n', '')
 
 
